@@ -64,7 +64,12 @@
                 height: 12vh;
                 border-radius: 5px;
             }
-            
+            .searchItems{
+                position: absolute;
+                left: 90vh;
+                top: 30vh;
+                visibility: hidden;
+            }
             
             
             
@@ -81,9 +86,9 @@
             <br>
             <a href="Modules/Module Template.zip" class='amod' download>To download the template press here!</a>
         </p>
-        
-        
-        
+        <div class='searchItems'>
+            <input class='searchbar' placeholder="Search Something!"><button class='submit' onclick='Search()'>Search</button><button class='submit' onclick='clearSearch()'>Clear Results!</button>
+        </div>
         
         
         <div class="flex-container">
@@ -99,6 +104,36 @@
         
         
         <script>
+            var units = [];
+        function Search(){
+            var search = document.querySelector('.searchbar').value;
+            console.log(search);
+            (units).forEach(element =>{
+               if(!element.name.toLowerCase().includes(search.toLowerCase())){
+                   document.querySelectorAll('.flex-container >div')[element.order].style.display = 'none';
+               }
+                if(element.name.toLowerCase().includes(search.toLowerCase())){
+                    document.querySelectorAll('.flex-container >div')[element.order].style.display = 'block';
+                    console.log(element);
+                }
+                
+            });
+            (units).forEach(element =>{
+               if(!element.name.toLowerCase().includes(search.toLowerCase())){
+                   document.querySelectorAll('.flex-container >div')[element.order].style.display = 'none';
+               }
+                if(element.name.toLowerCase().includes(search.toLowerCase())){
+                    document.querySelectorAll('.flex-container >div')[element.order].style.display = 'block';
+                    console.log(element);
+                }
+                
+            });
+        }
+        function clearSearch(){
+            (units).forEach(element=>{
+                document.querySelectorAll('.flex-container > div')[element.order].style.display = 'block';
+            });
+        }
         function Unit(name,order,description,image,link){
             this.name = name;
             this.order = order;
@@ -121,8 +156,6 @@
         }
             async function startUp(){
                 let modules = (await readTextFile(1)).split('\n');
-                let units = [];
-                console.log(modules);
                 var count = 0;
                 await (modules).forEach(async (element,index) =>{
                     await fetch(`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element}/moduleTemplate.json`).then(res => res.json()).then(theText => {
@@ -131,8 +164,8 @@
                         if(count == modules.length){
                         (units).forEach((element2) =>{
                             createObject(element2); 
-                            console.log('Done');
                         });
+                        document.querySelector('.searchItems').style.visibility = 'visible';
                     }
                     });
                 });
