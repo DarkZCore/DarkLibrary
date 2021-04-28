@@ -107,31 +107,17 @@
             var units = [];
         function Search(){
             var search = document.querySelector('.searchbar').value;
-            console.log(search);
-            (units).forEach(element =>{
-               if(!element.name.toLowerCase().includes(search.toLowerCase())){
-                   document.querySelectorAll('.flex-container >div')[element.order].style.display = 'none';
-               }
-                if(element.name.toLowerCase().includes(search.toLowerCase())){
-                    document.querySelectorAll('.flex-container >div')[element.order].style.display = 'block';
-                    console.log(element);
+            (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
+                if(!element.querySelector('.name').innerText.toLowerCase().includes(search.toLowerCase())){
+                    element.style.display = 'none';
+                }else{
+                    element.style.display = 'block';
                 }
-                
-            });
-            (units).forEach(element =>{
-               if(!element.name.toLowerCase().includes(search.toLowerCase())){
-                   document.querySelectorAll('.flex-container >div')[element.order].style.display = 'none';
-               }
-                if(element.name.toLowerCase().includes(search.toLowerCase())){
-                    document.querySelectorAll('.flex-container >div')[element.order].style.display = 'block';
-                    console.log(element);
-                }
-                
             });
         }
         function clearSearch(){
-            (units).forEach(element=>{
-                document.querySelectorAll('.flex-container > div')[element.order].style.display = 'block';
+            (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
+                element.style.display = 'block';
             });
         }
         function Unit(name,order,description,image,link){
