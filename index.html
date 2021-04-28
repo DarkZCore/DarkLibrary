@@ -117,19 +117,26 @@
         }
         function createObject(unit){
             var element = document.querySelector('.flex-container');
-            element.innerHTML += `<div class='unit'><img src=${unit.image} width="142.5vh" height="142.5vh" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;"><h2 class='name'>9anime</h2><p class='unitdesc' width='20px'>A module on Gogoanime to watch anime!Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p><button class='add'>Add</button></div>`;
+            element.innerHTML += `<div class='unit'><img src=${unit.image} width="142.5vh" height="142.5vh" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;"><h2 class='name'>${unit.name}</h2><p class='unitdesc' width='20px'>${unit.description}</p><a href=${unit.link}><button class='add'>Add</button></a></div>`;
         }
             async function startUp(){
                 let modules = (await readTextFile(1)).split('\n');
                 let units = [];
                 console.log(modules);
-                (modules).forEach(async (element,index) =>{
+                var count = 0;
+                await (modules).forEach(async (element,index) =>{
                     await fetch(`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element}/moduleTemplate.json`).then(res => res.json()).then(theText => {
-                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element}/moduleTemplate.json`));
-                        console.log(units);
+                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element.replace(' ','%20')}/moduleTemplate.json`));
+                        count++;
+                        if(count == modules.length){
+                        (units).forEach((element2) =>{
+                            createObject(element2); 
+                            console.log('Done');
+                        });
                     }
-                    );
+                    });
                 });
+                
                 
             }
             startUp();
