@@ -99,11 +99,12 @@
         
         
         <script>
-        function Unit(name,order,description,image){
+        function Unit(name,order,description,image,link){
             this.name = name;
             this.order = order;
             this.description = description;
             this.image = image;
+            this.link = link;
         }
         async function readTextFile(type){
             let array;
@@ -129,7 +130,7 @@
                 console.log(modules);
                 (modules).forEach(async (element,index) =>{
                     await fetch(`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element}/moduleTemplate.json`).then(res => res.json()).then(theText => {
-                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage));
+                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element}/moduleTemplate.json`));
                         console.log(units);
                     }
                     );
