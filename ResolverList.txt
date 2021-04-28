@@ -1,4 +1,3 @@
-Resolvers
 Cloud 9
 CSERVER
 Fembed
