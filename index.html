@@ -20,17 +20,103 @@
                 color: #1b79d7;
                 text-align: center;
             }
+            a{
+                color:#595f63;
+            }
+            .description{
+                position: absolute;
+                text-align: center;
+                top: 10%;
+            }
+            
+            
+            
+            
+            .unit{
+                margin-top: 10px;
+                position: relative;
+                top: 35vh;
+                left: 35vh;
+                width:144vh;
+                height:20vh;
+                background-color: whitesmoke;
+                border-radius: 10px;
+            }
+            .name{
+                position:relative;
+                top: -21vh;
+                left: 25vh;
+            }
+            .unitdesc{
+                position:relative;
+                top: -21vh;
+                left: 25vh;
+                white-space:normal;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100vh;
+            }
+            .add{
+                position:relative;
+                top: -35vh;
+                left: 121vh;
+                width: 22vh;
+                height: 12vh;
+                border-radius: 5px;
+            }
+            
+            
+            
+            
+            
         </style>
     </head>
     <body>
         <span class="header"></span>
         <h1 class="title"><b>Dark's Library</b></h1>
-        <button onclick="readTextFile()">Send</button>
-        <script>
-        async function readTextFile(){
-            await fetch('ModuleList.txt', {mode: "no-cors"}).then(res => res.text()).then(text => console.log(text));
-        }
+        <p class="description">Welcome to Dark's Library for Ketsu Modules. On this website you can find the latest and greatest modules availiable for the app! Modules are pieces of information fed to the app so that it displays a website in an app format. There are modules of all kinds such as Anime and even Cuisine recipes! You can find all these modules here!
+            <br>
+            <b>
+            <a href="https://appketsu.github.io/KETSU-Documentation/index.html">If you would like to make a module for the app yourself click here for the KETSU-Documentation!</a></b> 
+            <br>
+            <a href="Modules/Module Template.zip" download>To download the template press here!</a>
+        </p>
         
+        
+        
+        
+        
+        <div class="flex-container">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <script>
+        function Unit(name,order,description,image){
+            this.name = name;
+            this.order = order;
+            this.description = description;
+            this.image = image;
+        }
+        async function readTextFile(){
+            await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ResolverList.txt').then(res => res.text()).then(text => console.log(text));
+        }
+        function createObject(unit){
+            var element = document.querySelector('.flex-container');
+            element.innerHTML += `<div class='unit'>
+                <img src="https://i1.wp.com/kodibeginner.com/wp-content/uploads/2020/10/gogoanime.jpg?fit=300%2C300&ssl=1" width="142.5vh" height="142.5vh" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;">
+                <h2 class='name'>9anime</h2>
+                <p class='unitdesc' width='20px'>A module on Gogoanime to watch anime!Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem</p>
+                <button class='add'>Add</button>
+            </div>`;
+        }
         
         </script>
     </body>
