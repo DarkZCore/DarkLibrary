@@ -105,8 +105,14 @@
             this.description = description;
             this.image = image;
         }
-        async function readTextFile(){
-            await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ResolverList.txt').then(res => res.text()).then(text => console.log(text));
+        async function readTextFile(type){
+            let array;
+            if(type == 1){
+                await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ModuleList.txt').then(res => res.text()).then(text => array = text);
+            }else if(type = 2){
+                await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ResolverList.txt').then(res => res.text()).then(text => array = text);
+            }
+            return array;
         }
         function createObject(unit){
             var element = document.querySelector('.flex-container');
@@ -117,6 +123,19 @@
                 <button class='add'>Add</button>
             </div>`;
         }
+            async function startUp(){
+                let modules = (await readTextFile(1)).split('\n');
+                let units = [];
+                console.log(modules);
+                (modules).forEach(async (element,index) =>{
+                    await fetch(`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element}/moduleTemplate.json`).then(res => res.json()).then(theText => {
+                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage));
+                        console.log(units);
+                    }
+                    );
+                });       
+            }
+            startUp();
         
         </script>
     </body>
