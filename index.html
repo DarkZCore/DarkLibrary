@@ -169,8 +169,8 @@
                 let modules = (await readTextFile(1)).split('\n');
                 var count = 0;
                 await (modules).forEach(async (element,index) =>{
-                    await fetch(`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element}/moduleTemplate.json`).then(res => res.json()).then(theText => {
-                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,`https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/${element.replace(' ','%20')}/moduleTemplate.json`));
+                    await fetch(element).then(res => res.json()).then(theText => {
+                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element));
                         count++;
                         if(count == modules.length){
                         (units).forEach((element2) =>{

@@ -1,22 +1,22 @@
-4Anime
-Anime Kisa
-AnimeHub
-AnimePahe
-Cusine recipies
-GoGoAnime
-JKAnime
-LightNovels
-live chart
-MangaNelo
-Mangaworld
-NineManga
-NineMangaEng
-TAADD
-Trace.moe
-VostFree
-WCOS
-Hanime
-NHentai
-Shiro
-Toonily
-Webtoon
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/4Anime/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Anime%20Kisa/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/AnimeHub/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/AnimePahe/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Cusine%20recipies/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/GoGoAnime/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/JKAnime/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/LightNovels/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/live%20chart/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/MangaNelo/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Mangaworld/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/NineManga/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/NineMangaEng/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/TAADD/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Trace.moe/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/VostFree/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/WCOS/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Hanime/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/NHentai/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Shiro/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Toonily/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Webtoon/moduleTemplate.json
