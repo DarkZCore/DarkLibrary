@@ -2,8 +2,10 @@
 <html>
     <head>
         <title>Dark Library</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="https://www.seekpng.com/png/detail/127-1271485_animeicon-tokyoghoul-kanekiken-anime-icon-kaneki-tokyo-ghoul.png">
         <style>
+            
             body{
                 background-color: #1E2529;
             }
@@ -51,12 +53,12 @@
             .name{
                 position:relative;
                 top: -111%;
-                left: 15%;
+                left: 22.5%;
             }
             .unitdesc{
                 position:relative;
                 top: -111%;
-                left: 15%;
+                left: 22.5%;
                 white-space:normal;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -76,7 +78,24 @@
                 visibility: hidden;
             }
             
-            
+            @media only screen and (max-device-width: 480px){
+                .unit{
+                    top:10%;
+                    width:70%;
+                    height: 10%;
+                    font-size: 10px;
+                }
+                .unitdesc{
+                    white-space:normal;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    max-width: 150px;
+                }
+                .searchItems{
+                    top:40%;
+                    left:25%;
+                }
+            }
             
             
         </style>
@@ -143,7 +162,7 @@
         }
         function createObject(unit){
             var element = document.querySelector('.flex-container');
-            element.innerHTML += `<div class='unit'><img src=${unit.image} width="142.5vh" height="142.5vh" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;"><h2 class='name'>${unit.name}</h2><p class='unitdesc' width='20px'>${unit.description}</p><a href=${unit.link}><button class='add'>Add</button></a></div>`;
+            element.innerHTML += `<div class='unit'><img src=${unit.image} width="20%" height="100%" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;"><h2 class='name'>${unit.name}</h2><p class='unitdesc' width='20px'>${unit.description}</p><a href=${unit.link}><button class='add'>Add</button></a></div>`;
         }
             async function startUp(){
                 let modules = (await readTextFile(1)).split('\n');
