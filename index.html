@@ -62,21 +62,7 @@
 
 <script>
     var units = [];
-function Search(){
-    var search = document.querySelector('.searchbar').value;
-    (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
-        if(!element.querySelector('.name').innerText.toLowerCase().includes(search.toLowerCase())){
-            element.style.display = 'none';
-        }else{
-            element.style.display = 'block';
-        }
-    });
-}
-function clearSearch(){
-    (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
-        element.style.display = 'block';
-    });
-}
+
 function Unit(name,order,description,image,link,language,type){
     this.name = name;
     this.order = order;
