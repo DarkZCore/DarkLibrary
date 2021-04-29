@@ -145,12 +145,13 @@
                 element.style.display = 'block';
             });
         }
-        function Unit(name,order,description,image,link){
+        function Unit(name,order,description,image,link,language){
             this.name = name;
             this.order = order;
             this.description = description;
             this.image = image;
             this.link = 'ketsuapp://?moduleData='+link;
+            this.lan = language;
         }
         async function readTextFile(type){
             let array;
@@ -163,14 +164,16 @@
         }
         function createObject(unit){
             var element = document.querySelector('.flex-container');
-            element.innerHTML += `<div class='unit'><img src=${unit.image} width="20%" height="100%" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;"><h2 class='name'>${unit.name}</h2><p class='unitdesc' width='20px'>${unit.description}</p><a href=${unit.link}><button class='add'>Add</button></a></div>`;
+            element.innerHTML += `<div class='unit'><img src=${unit.image} width="20%" height="100%" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;"><h2 class='name'>${unit.name} (${unit.lan})</h2><p class='unitdesc' width='20px'>${unit.description}</p><a href=${unit.link}><button class='add'>Add</button></a></div>`;
         }
             async function startUp(){
                 let modules = (await readTextFile(1)).split('\n');
+                console.log(modules);
                 var count = 0;
                 await (modules).forEach(async (element,index) =>{
+                    console.log(element);
                     await fetch(element).then(res => res.json()).then(theText => {
-                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element));
+                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage));
                         count++;
                         if(count == modules.length){
                         (units).forEach((element2) =>{
