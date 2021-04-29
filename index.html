@@ -1,193 +1,150 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Dark Library</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="https://www.seekpng.com/png/detail/127-1271485_animeicon-tokyoghoul-kanekiken-anime-icon-kaneki-tokyo-ghoul.png">
-        <style>
-            
-            body{
-                background-color: #1E2529;
-            }
-            .header{
-                position: absolute;
-                top: 0%;
-                left: 0%;
-                width: 100%;
-                height: 12%;
-                background-color: #171D20;
-            }
-            .title{
-                position: relative;
-                color: #1b79d7;
-                text-align: center;
-            }
-            .amod{
-                color:#595f63;
-            }
-            .description{
-                position: absolute;
-                text-align: center;
-                top: 10%;
-            }
-            
-            .flex-container{
 
-                position: absolute;
-                left: 0%;
-                top:40%;
-                width: 100%;
-                height: 100%;
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dark's Library">
+    <meta name="author" content="Dark">
+    <title>Dark Library</title><link rel="icon" href="https://www.seekpng.com/png/detail/127-1271485_animeicon-tokyoghoul-kanekiken-anime-icon-kaneki-tokyo-ghoul.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <style>
+        body{
+                background-color: #1E2529;
+                color: white;
             }
-            
-            .unit{
-                margin-top: 10px;
-                position:relative;
-                top: 0%;
-                left: 15%;
-                width:70%;
-                height:20%;
-                background-color: whitesmoke;
-                border-radius: 10px;
-            }
-            .name{
-                position:relative;
-                top: -111%;
-                left: 22.5%;
-                max-width:250px;
-            }
-            .unitdesc{
-                position:relative;
-                top: -111%;
-                left: 22.5%;
-                white-space:normal;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 450px;
-            }
-            .add{
-                position: absolute;
-                top:10%;
-                left:75%;
-                width: 20%;
-                height: 80%;
-            }
-            .searchItems{
-                position: absolute;
-                left: 40%;
-                top: 32.5%;
-                visibility: hidden;
-            }
-            
-            @media only screen and (max-device-width: 480px){
-                .unit{
-                    top:20%;
-                    width:70%;
-                    height: 15%;
-                    font-size: 10px;
-                }
-                .unitdesc{
-                    white-space:normal;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    max-width: 150px;
-                }
-                .searchItems{
-                    top:50%;
-                    left:25%;
-                }
-            }
-            
-            
-        </style>
-    </head>
-    <body>
-        <span class="header"></span>
-        <h1 class="title"><b>Dark's Library</b></h1>
-        <p class="description">Welcome to Dark's Library for Ketsu Modules. On this website you can find the latest and greatest modules availiable for the app! Modules are pieces of information fed to the app so that it displays a website in an app format. There are modules of all kinds such as Anime and even Cuisine recipes! You can find all these modules here!
-            <br>
-            <b>
-            <a href="https://appketsu.github.io/KETSU-Documentation/index.html" class="amod">If you would like to make a module for the app yourself click here for the KETSU-Documentation!</a></b> 
-            <br>
-            <a href="Modules/Module Template.zip" class='amod' download>To download the template press here!</a>
-        </p>
-        <div class='searchItems'>
-            <input class='searchbar' placeholder="Search Something!"><button class='submit' onclick='Search()'>Search</button><button class='submit' onclick='clearSearch()'>Clear Results!</button>
+            .link {
+    text-decoration: underline;
+    color: white;
+}
+    </style>
+<div class="p-5 container-fluid">
+    <div class="row">
+
+    <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="text-center">Dark's Library</h1>
+        <p class="p-5 lead text-center">Welcome to Dark's Library for Ketsu Modules. On this website you can find the latest and greatest modules availiable for the app! Modules are pieces of information fed to the app so that it displays a website in an app format. There are modules of all kinds such as Anime and even Cuisine recipes! You can find all these modules here!! <a href="https://appketsu.github.io/KETSU-Documentation/index.htm" class="link">If you would like to make a module for the app yourself click here for the KETSU-Documentation! To download the template press here. </a><a href="Modules/Module Template.zip" class="link">To download the template press here</a></p>
+       
+        <input id="search-input" style="width: 250px;
+        margin: 10px auto;
+        padding: 7px;" class="form-control" placeholder="Search For Module" type="text">
+    </div>
+    
+    
+
+    <div class="container py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">Video Modules</h2>
+        <div id="video-modules" class="row g-5 py-5">
+          
+        
         </div>
-        
-        
-        <div class="flex-container">
-            
+      </div>
+      <div class="container py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">Image Modules</h2>
+        <div id="image-modules" class="row g-5 py-5">
+       
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <script>
-            var units = [];
-        function Search(){
-            var search = document.querySelector('.searchbar').value;
-            (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
-                if(!element.querySelector('.name').innerText.toLowerCase().includes(search.toLowerCase())){
-                    element.style.display = 'none';
-                }else{
-                    element.style.display = 'block';
-                }
-            });
+      </div>
+      <div class="container py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">Text Modules</h2>
+        <div id="text-modules" class="row g-5 py-5">
+         
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<script>
+    var units = [];
+function Search(){
+    var search = document.querySelector('.searchbar').value;
+    (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
+        if(!element.querySelector('.name').innerText.toLowerCase().includes(search.toLowerCase())){
+            element.style.display = 'none';
+        }else{
+            element.style.display = 'block';
         }
-        function clearSearch(){
-            (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
-                element.style.display = 'block';
-            });
-        }
-        function Unit(name,order,description,image,link,language){
-            this.name = name;
-            this.order = order;
-            this.description = description;
-            this.image = image;
-            this.link = 'ketsuapp://?moduleData='+link;
-            this.lan = language;
-        }
-        async function readTextFile(type){
-            let array;
-            if(type == 1){
-                await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ModuleList.txt').then(res => res.text()).then(text => array = text);
-            }else if(type = 2){
-                await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ResolverList.txt').then(res => res.text()).then(text => array = text);
-            }
-            return array;
-        }
-        function createObject(unit){
-            var element = document.querySelector('.flex-container');
-            element.innerHTML += `<div class='unit'><img src=${unit.image} width="20%" height="100%" style="border-top-left-radius: 10px;border-bottom-left-radius: 10px;"><h2 class='name'>${unit.name} (${unit.lan})</h2><p class='unitdesc' width='20px'>${unit.description}</p><a href=${unit.link}><button class='add'>Add</button></a></div>`;
-        }
-            async function startUp(){
-                let modules = (await readTextFile(1)).split('\n');
-                console.log(modules);
-                var count = 0;
-                await (modules).forEach(async (element,index) =>{
-                    console.log(element);
-                    await fetch(element).then(res => res.json()).then(theText => {
-                        units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage));
-                        count++;
-                        if(count == modules.length){
-                        (units).forEach((element2) =>{
-                            createObject(element2); 
-                        });
-                        document.querySelector('.searchItems').style.visibility = 'visible';
-                    }
-                    });
+    });
+}
+function clearSearch(){
+    (document.querySelectorAll('.flex-container > div')).forEach((element,index)=>{
+        element.style.display = 'block';
+    });
+}
+function Unit(name,order,description,image,link,language,type){
+    this.name = name;
+    this.order = order;
+    this.description = description;
+    this.image = image;
+    this.link = 'ketsuapp://?moduleData='+link;
+    this.lan = language;
+    this.type = type
+}
+async function readTextFile(type){
+    let array;
+    if(type == 1){
+        await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ModuleList.txt').then(res => res.text()).then(text => array = text);
+    }else if(type = 2){
+        await fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ResolverList.txt').then(res => res.text()).then(text => array = text);
+    }
+    return array;
+}
+$(document).ready(function() {
+    $("#search-input").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      console.log(value)
+      $(".module-container").filter(function() {
+          console.log($(this).text())
+
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    });
+  });
+function createObject(unit){
+    if (unit.type === "Video") {
+
+        $('#video-modules').append(`<div style="display: flex;" class="module-container col-md-4 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+
+
+    } else if (unit.type == "Image") {
+        $('#image-modules').append(`<div style="display: flex;" class="module-container col-md-4 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+
+    } else if (unit.type == "Text") {
+        $('#text-modules').append(`<div style="display: flex;" class="module-container col-md-4 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+
+    }
+    
+}
+    async function startUp(){
+        let modules = (await readTextFile(1)).split('\n');
+        console.log(modules);
+        var count = 0;
+        await (modules).forEach(async (element,index) =>{
+            console.log(element);
+            await fetch(element).then(res => res.json()).then(theText => {
+                units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType));
+                count++;
+                if(count == modules.length){
+                (units).forEach((element2) =>{
+                    createObject(element2); 
                 });
-                
-                
+               
             }
-            startUp();
+            });
+        });
         
-        </script>
-    </body>
+        
+    }
+    startUp();
+
+</script>
+
+      
+  </body>
 </html>
