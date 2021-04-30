@@ -58,6 +58,9 @@
 
     <div class="container py-5" id="hanging-icons">
         <h2 class="pb-2 border-bottom">Resolvers</h2>
+        <div style="margin: 20px; text-align: center;" class="alert alert-danger" role="alert">
+        If the Resolvers Don't Load Make Sure Your Adblocker is Disabled.
+        </div>
         <div id="resolvers" class="row g-5 py-5"></div>
       </div> 
     </div>    
@@ -88,7 +91,7 @@ async function readTextFile(type){
 $(document).ready(function() {
     $("#search-input").on("keyup", function() {
       var value = $(this).val().toLowerCase();
-      console.log(value)
+      console.log(value);
       $(".module-container").filter(function() {
           console.log($(this).text())
 
@@ -98,7 +101,7 @@ $(document).ready(function() {
   });
 function createObject(unit){
    
-console.log(unit)
+console.log(unit);
         $('#resolvers').append(`<div style="display: flex;" class="module-container col-lg-3 col-md-6 col-12 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"></div><div><h3>${unit.name}</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Resolver</a> </div> </div>`)
 
 
