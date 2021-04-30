@@ -13,3 +13,4 @@ https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/StreamTa
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/UM/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/UQLOAD/UQLOAD.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/YUServer/resolverTemplate.json
+https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Resolver%20Parser%20KETSU/HSERVER/resolverTemplate.json
