@@ -118,7 +118,7 @@ console.log(unit);
             console.log(element);
             
             await fetch(element).then((res) => {
-                if(res.status == 200){
+                if(res.ok){
                     return res.json();
                 }else{
                     let div = document.createElement('div');
