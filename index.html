@@ -69,7 +69,7 @@
     <div class="container py-5" id="hanging-icons">
         <h2 class="pb-2 border-bottom">Video Modules</h2>
         <div id="video-modules" class="row g-5 py-5">
-          <div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="https://appmobile4u.com/wp-content/uploads/2019/07/unnamed.png" style="object-fit: cover;" alt=""> </div><div><h3>9Anime (ENG)</h3><p>A module to get data from 9anime. Watch Animes from a large collection of choices!!</p><a href="https://ia801602.us.archive.org/11/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" class="btn btn-primary">Add Module</a> </div> </div>
+          
           
         
         </div>
@@ -147,8 +147,12 @@ function createObject(unit){
                 units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType));
                 count++;
                 if(count == modules.length){
-                (units).forEach((element2) =>{
+                (units).forEach((element2,x) =>{
+                 
                     createObject(element2); 
+                    if (x + 1 == modules.length) {
+                      $('#video-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="https://appmobile4u.com/wp-content/uploads/2019/07/unnamed.png" style="object-fit: cover;" alt=""> </div><div><h3>9Anime (ENG)</h3><p>A module to get data from 9anime. Watch Animes from a large collection of choices!!</p><a href="https://ia801602.us.archive.org/11/items/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" class="btn btn-primary">Add Module</a> </div> </div>`);
+                    }
                 });
                
             }
