@@ -3,7 +3,6 @@ https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/CSERVER/
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/Fembed/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/GoGoPlay/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/GSERVER/resolverTemplate.json
-https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/HSERVER/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/JK/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/MixDrop/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/MPServer/resolverTemplate.json
