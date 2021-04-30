@@ -114,7 +114,17 @@ console.log(unit)
         await (modules).forEach(async (element,index) =>{
             console.log(element);
             
-            await fetch(element).then(res => res.json()).then(theText => {
+            await fetch(element).then((res) => {
+                if(res.status == 200){
+                    return res.json();
+                }else{
+                    let div = document.createElement('div');
+                    div.innerHTML = `<div class="alert alert-light" role="alert">
+  Please disable adblocker! Failed to load: ${element}
+</div>`;
+                    throw new Error('Something went wrong');
+                }
+            }).then(theText => {
                 units.push(new Unit(theText.resolverInfo.resolverName,index,theText.resolverInfo.resolverVersion.toString()+' | '+theText.resolverInfo.developer,'',element,''));
                 count++;
                 if(count == modules.length){
@@ -123,10 +133,7 @@ console.log(unit)
                 });
             }
             }).catch((error) => {
-                let div = document.createElement('div');
-                div.innerHTML = `<div class="alert alert-light" role="alert">
-  Please disable adblocker! Failed to load: ${element}!
-</div>`;
+                console.log('Error');
             });
         });
         
