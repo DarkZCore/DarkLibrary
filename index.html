@@ -116,14 +116,14 @@ $(document).ready(function() {
 function createObject(unit){
     if (unit.type === "Video") {
 
-        $('#video-modules').append(`<div style="display: flex;" class="module-container col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+        $('#video-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
 
 
     } else if (unit.type == "Image") {
-        $('#image-modules').append(`<div style="display: flex;" class="module-container col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+        $('#image-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
 
     } else if (unit.type == "Text") {
-        $('#text-modules').append(`<div style="display: flex;" class="module-container col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+        $('#text-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
 
     }
     
