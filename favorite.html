@@ -23,6 +23,11 @@
     text-decoration: underline;
     color: white;
 }
+.center-block {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
     </style>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -52,29 +57,31 @@
       <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="text-center">Dark & Noah's Module Library</h1>
             <p class="p-5 lead text-center">If you would like to transfer your Katsu and Zetsu favorites over to Ketsu you have come to the right place! First thing you want to do is export your katsu and zetsu favorites. <b>If you have any ketsu favorites already export those as well!</b> Next place each export in the corresponding section. For example the katsu export on the Katsu text area. After that press convert and copy the text on the result textarea!</p>
+			<div class="textareas center-block">
+				<div class="input-group " style="padding-top: 10px;">
+				  <span class="input-group-text ">Katsu</span>
+				  <textarea class="form-control jsonKatsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;"></textarea>
+				</div>
+				<div class= "input-group" style="padding-top: 10px;">
+				  <span class="input-group-text">Zetsu</span>
+				  <textarea class="form-control jsonZetsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;"></textarea>
+				</div>
+				<div class=" input-group" style="padding-top: 10px;">
+				  <span class="input-group-text">Ketsu</span>
+				  <textarea class="form-control jsonKetsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;"></textarea>
+				</div>
+				<div class="input-group" style="padding-top: 10px;">
+				  <span class="input-group-text">Result</span>
+				  <textarea id="copy" class="form-control" aria-label="With textarea" rows="1" cols="50" style="max-width: 217px;"></textarea>
+				  <button class="btn btn-outline-secondary" type="button" style="background-color: lightgray;" onclick="convert()">Convert</button>
+				</div>
+				</div>
       </div>
       </div>
+	  
       </div>
       
-      <div class="textareas" style="position: absolute;left: 27%;top:70%;">
-      <div class="input-group" style="padding-top: 10px;">
-        <span class="input-group-text" style="position: relative;left:37%">Katsu</span>
-        <textarea class="form-control jsonKatsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;left:37%;"></textarea>
-      </div>
-      <div class="input-group" style="padding-top: 10px;">
-        <span class="input-group-text" style="position: relative;left:37%">Zetsu</span>
-        <textarea class="form-control jsonZetsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;left:37%;"></textarea>
-      </div>
-      <div class="input-group" style="padding-top: 10px;">
-        <span class="input-group-text" style="position: relative;left:37%;">Ketsu</span>
-        <textarea class="form-control jsonKetsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;left:37%;"></textarea>
-      </div>
-      <div class="input-group" style="padding-top: 10px;">
-        <span class="input-group-text" style="position: relative;left:37%">Result</span>
-        <textarea id="copy" class="form-control" aria-label="With textarea" rows="1" cols="50" style="max-width: 217px;left:37%;"></textarea>
-        <button class="btn btn-outline-secondary" type="button" style="left:37%;background-color: lightgray;" onclick="convert()">Convert</button>
-      </div>
-      </div>
+      
 
       	<script>
 	var moduleIds = {
