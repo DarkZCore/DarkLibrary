@@ -1,0 +1,245 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Library that contains modules for Ketsu">
+    <meta name="author" content="Dark,Noah">
+    <title>Dark & Noah's Module Library</title>
+    <link rel="icon" href="https://www.seekpng.com/png/detail/127-1271485_animeicon-tokyoghoul-kanekiken-anime-icon-kaneki-tokyo-ghoul.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <style>
+        body{
+                background-color: #1E2529;
+                color: white;
+            }
+            .link {
+    text-decoration: underline;
+    color: white;
+}
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><h2>Library</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Modules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="resolvers">Resolvers</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="favorite.html">Transfer Favorites</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+      <div class="p-5 container-fluid">
+      <div class="row">
+
+      <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="text-center">Dark & Noah's Module Library</h1>
+            <p class="p-5 lead text-center">If you would like to transfer your Katsu and Zetsu favorites over to Ketsu you have come to the right place! First thing you want to do is export your katsu and zetsu favorites. <b>If you have any ketsu favorites already export those as well!</b> Next place each export in the corresponding section. For example the katsu export on the Katsu text area. After that press convert and copy the text on the result textarea!</p>
+      </div>
+      </div>
+      </div>
+      
+      <div class="textareas" style="position: absolute;left: 27%;top:70%;">
+      <div class="input-group" style="padding-top: 10px;">
+        <span class="input-group-text" style="position: relative;left:37%">Katsu</span>
+        <textarea class="form-control jsonKatsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;left:37%;"></textarea>
+      </div>
+      <div class="input-group" style="padding-top: 10px;">
+        <span class="input-group-text" style="position: relative;left:37%">Zetsu</span>
+        <textarea class="form-control jsonZetsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;left:37%;"></textarea>
+      </div>
+      <div class="input-group" style="padding-top: 10px;">
+        <span class="input-group-text" style="position: relative;left:37%;">Ketsu</span>
+        <textarea class="form-control jsonKetsu" aria-label="With textarea" rows="1" cols="50" style="max-width: 300px;left:37%;"></textarea>
+      </div>
+      <div class="input-group" style="padding-top: 10px;">
+        <span class="input-group-text" style="position: relative;left:37%">Result</span>
+        <textarea id="copy" class="form-control" aria-label="With textarea" rows="1" cols="50" style="max-width: 217px;left:37%;"></textarea>
+        <button class="btn btn-outline-secondary" type="button" style="left:37%;background-color: lightgray;" onclick="convert()">Convert</button>
+      </div>
+      </div>
+
+      	<script>
+	var moduleIds = {
+	gogoanime : "28932498734237987329",
+	animekisa : "3489230942384712",
+	animehub : "73474883994874",
+	fouranime : "09843288380",
+	jkanime : "234234823",
+	manganelo : "2870348473737712",
+	taadd : "423948723487",
+	engninemanga : "875749847855764655",
+	spninemanga : "8757498472737",
+	rln : "223423423421"
+};
+
+
+function KetsuObject(){
+	this.categories = [];
+	this.favorites = [];
+}
+
+function Request(url){
+	this.url = url;
+	this.method = "get";
+	this.headers = [];
+}
+
+function KetsuFavorito(link,image,id,lastseen,name,type,moduleName){
+	this.urlIdentifier = link;
+	this.type = type;
+	this.title = name;
+	this.moduleName = moduleName;
+	this.moduleID = id;
+	this.lastSeen = lastseen;
+	this.request = new Request(link);
+	this.image = new Request(image);
+	this.categories = [];
+	
+}
+
+function copy() {
+	var c = document.querySelector("#copy").select();
+	document.execCommand('copy');
+}
+
+function convert(){
+var zetsu = false;
+var ketsubool = false;
+var katsu = false;
+try{
+	var inputKatsu = JSON.parse(document.querySelector(".jsonKatsu").value);
+}catch(err){
+	katsu = true;
+	console.log("Not Valid Json");
+}
+try{
+
+var inputZetsu = JSON.parse(document.querySelector(".jsonZetsu").value);
+}catch(err){
+	zetsu = true;
+	console.log("Not Valid Json");
+}
+try{
+var inputKetsu = JSON.parse(document.querySelector(".jsonKetsu").value);
+console.log(inputKetsu.favorites.length);
+}catch(err){
+	ketsubool = true;
+	console.log("Not Valid Json");
+	
+}
+	var ketsu = new KetsuObject();
+	var type;
+	if(!katsu){
+	(inputKatsu).forEach(element => {
+	if(element.link.includes("taadd")||element.link.includes("manganelo")||element.link.includes("ninemanga")||element.link.includes("gogoanime")||element.link.includes("readlightnovel")||element.link.includes("animekisa")||element.link.includes("animehub")||element.link.includes("4anime")||element.link.includes("jkanime")){
+	
+	
+	
+	
+		if(element.link.includes("taadd") || element.link.includes("manganelo") || element.link.includes("ninemanga")){
+	type = "Image";
+}else if(element.link.includes("readlightnovel")){type = "Text"}else{type="Video"}
+
+
+var moduleId;
+		if(element.link.includes("gogoanime")){
+			moduleId = moduleIds.gogoanime;
+		}else if(element.link.includes("animekisa")){
+			moduleId = moduleIds.animekisa;
+		}else if(element.link.includes("animehub")){
+			moduleId = moduleIds.animehub;
+		}else if(element.link.includes("4anime")){
+			moduleId = moduleIds.fouranime;
+		}else if(element.link.includes("jkanime")){
+			moduleId = moduleIds.jkanime;
+		}else if(element.link.includes("manganelo")){
+			moduleId = moduleIds.manganelo;
+		}else if(element.link.includes("taadd")){
+			moduleId = moduleIds.taadd;
+		}else if(element.link.includes("en.ninemanga")){
+			moduleId = moduleIds.engninemanga;
+		}else if(element.link.includes("es.ninemanga")){
+			moduleId = moduleIds.spninemanga;
+		}else if(element.link.includes("readlightnovel")){
+			moduleId = moduleIds.rln;
+		}
+		
+		
+		ketsu.favorites.push(new KetsuFavorito(element.link,element.image,moduleId,element.lastEp,element.name,type,element.moduleShortName));
+}
+
+	});
+	}
+		if(!zetsu){
+	(inputZetsu).forEach(element => {
+	if(element.link.includes("taadd")||element.link.includes("manganelo")||element.link.includes("ninemanga")||element.link.includes("gogoanime")||element.link.includes("readlightnovel")||element.link.includes("animekisa")||element.link.includes("animehub")||element.link.includes("4anime")||element.link.includes("jkanime")){
+	
+	
+	
+	
+		if(element.link.includes("taadd") || element.link.includes("manganelo") || element.link.includes("ninemanga")){
+	type = "Image";
+}else if(element.link.includes("readlightnovel")){type = "Text"}else{type="Video"}
+
+
+var moduleId;
+		if(element.link.includes("gogoanime")){
+			moduleId = moduleIds.gogoanime;
+		}else if(element.link.includes("animekisa")){
+			moduleId = moduleIds.animekisa;
+		}else if(element.link.includes("animehub")){
+			moduleId = moduleIds.animehub;
+		}else if(element.link.includes("4anime")){
+			moduleId = moduleIds.fouranime;
+		}else if(element.link.includes("jkanime")){
+			moduleId = moduleIds.jkanime;
+		}else if(element.link.includes("manganelo")){
+			moduleId = moduleIds.manganelo;
+		}else if(element.link.includes("taadd")){
+			moduleId = moduleIds.taadd;
+		}else if(element.link.includes("en.ninemanga")){
+			moduleId = moduleIds.engninemanga;
+		}else if(element.link.includes("es.ninemanga")){
+			moduleId = moduleIds.spninemanga;
+		}else if(element.link.includes("readlightnovel")){
+			moduleId = moduleIds.rln;
+		}
+		
+		
+		ketsu.favorites.push(new KetsuFavorito(element.link,element.image,moduleId,element.lastEp,element.name,type,element.moduleShortName));
+}
+
+	});
+	}
+	if(!ketsubool){
+		for(let i=0;i<inputKetsu.favorites.length;i++){
+	ketsu.favorites.push(inputKetsu.favorites[i]);
+}
+	}
+	document.querySelector("#copy").value = JSON.stringify(ketsu);
+}
+    document.querySelector('#copy').addEventListener('click',copy);
+	
+	</script>
+      
+      
+    </body>
+</html>
