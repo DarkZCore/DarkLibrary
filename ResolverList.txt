@@ -13,8 +13,4 @@ https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/Sibnet/r
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/StreamTape/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/UM/resolverTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/UQLOAD/UQLOAD.json
-<<<<<<< HEAD
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/YUServer/resolverTemplate.json
-=======
-https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Resolver/YUServer/resolverTemplate.json
->>>>>>> cd17981d89be259358c67a551cf28426761234e1
