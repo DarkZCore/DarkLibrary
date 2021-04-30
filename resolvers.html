@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A Library that contains modules for Ketsu">
+    <meta name="description" content="A Library that contains resolvers for Ketsu">
     <meta name="author" content="Dark,Noah">
-    <title>Dark & Noah's Module Library</title>
+    <title>Dark & Noah's Resolver Library</title>
     <link rel="icon" href="https://www.seekpng.com/png/detail/127-1271485_animeicon-tokyoghoul-kanekiken-anime-icon-kaneki-tokyo-ghoul.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
@@ -33,10 +33,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Modules</a>
+                <a class="nav-link active" aria-current="page" href="#">Resolvers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="resolvers">Resolvers</a>
+                <a class="nav-link" href="/DarkLibrary">Modules</a>
               </li>
 
             </ul>
@@ -48,35 +48,18 @@
     <div class="row">
 
     <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="text-center">Dark & Noah's Module Library</h1>
-        <p class="p-5 lead text-center">Welcome to Dark & Noah's Library for Ketsu Modules. On this website you can find the latest and greatest modules availiable for the app! Modules are pieces of information fed to the app so that it displays a website in an app format. There are modules of all kinds such as Anime and even Cuisine recipes! You can find all these modules here!! <a href="https://appketsu.github.io/KETSU-Documentation/index.html" class="link">If you would like to make a module for the app yourself click here for the KETSU-Documentation! To download the template press here.</a><a href="Modules/Module Template.zip" class="link"> To download the template press here</a></p>
+        <h1 class="text-center">Dark & Noah's Resolver Library</h1>
+        <p class="p-5 lead text-center">Welcome to Dark & Noah's Library for Ketsu Resolvers. On this website you can find the latest and greatest modules availiable for the app! Resolvers are pieces of information fed to the app so that it gets the playable link for the app to process.You can find all these resolvers here!!</p>
        
-        <input id="search-input" style="width: 250px;
-        margin: 10px auto;
-        padding: 7px;" class="form-control" placeholder="Search For Module" type="text">
+        <input id="search-input" style="width: 250px;margin:10px auto;padding: 7px;" class="form-control" placeholder="Search For Resolvers" type="text">
     </div>
     
     
 
     <div class="container py-5" id="hanging-icons">
-        <h2 class="pb-2 border-bottom">Video Modules</h2>
-        <div id="video-modules" class="row g-5 py-5">
-          
-        
-        </div>
-      </div>
-      <div class="container py-5" id="hanging-icons">
-        <h2 class="pb-2 border-bottom">Image Modules</h2>
-        <div id="image-modules" class="row g-5 py-5">
-       
-        </div>
-      </div>
-      <div class="container py-5" id="hanging-icons">
-        <h2 class="pb-2 border-bottom">Text Modules</h2>
-        <div id="text-modules" class="row g-5 py-5">
-         
-        </div>
-      </div>
+        <h2 class="pb-2 border-bottom">Resolvers</h2>
+        <div id="resolvers" class="row g-5 py-5"></div>
+      </div> 
     </div>
 
 </div>
@@ -89,7 +72,7 @@ function Unit(name,order,description,image,link,language,type){
     this.order = order;
     this.description = description;
     this.image = image;
-    this.link = 'ketsuapp://?moduleData='+link;
+    this.link = 'ketsuapp://?resolverData='+link;
     this.lan = language;
     this.type = type
 }
@@ -114,28 +97,25 @@ $(document).ready(function() {
     });
   });
 function createObject(unit){
-    if (unit.type === "Video") {
+   
+console.log(unit)
+        $('#resolvers').append(`<div style="display: flex;" class="module-container col-lg-3 col-md-6 col-12 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"></div><div><h3>${unit.name}</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Resolver</a> </div> </div>`)
 
-        $('#video-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
 
-
-    } else if (unit.type == "Image") {
-        $('#image-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
-
-    } else if (unit.type == "Text") {
-        $('#text-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
-
-    }
+ 
     
 }
     async function startUp(){
-        let modules = (await readTextFile(1)).split('\n');
+        let modules = (await readTextFile(2)).split('\n');
         console.log(modules);
+        
         var count = 0;
+      
         await (modules).forEach(async (element,index) =>{
             console.log(element);
+            
             await fetch(element).then(res => res.json()).then(theText => {
-                units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType));
+                units.push(new Unit(theText.resolverInfo.resolverName,index,theText.resolverInfo.resolverVersion.toString()+' | '+theText.resolverInfo.developer,'',element,''));
                 count++;
                 if(count == modules.length){
                 (units).forEach((element2) =>{
@@ -144,6 +124,7 @@ function createObject(unit){
                
             }
             });
+            
         });
         
         
