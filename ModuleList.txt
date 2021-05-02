@@ -20,4 +20,3 @@ https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/NHentai/m
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Shiro/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Toonily/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Webtoon/moduleTemplate.json
-https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/9Anime/module.json
