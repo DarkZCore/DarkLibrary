@@ -117,6 +117,7 @@ console.log(unit);
         var count = 0;
       
         await (modules).forEach(async (element,index) =>{
+            if(element != ''){
             console.log(element);
             
             await fetch(element).then((res) => {
@@ -138,6 +139,7 @@ console.log(unit);
                 });
             }
             });
+            }
         
     });
     }

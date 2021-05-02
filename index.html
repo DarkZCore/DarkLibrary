@@ -141,6 +141,7 @@ function createObject(unit){
         console.log(modules);
         var count = 0;
         await (modules).forEach(async (element,index) =>{
+            if(element != ''){
             console.log(element);
             await fetch(element).then(res => res.json()).then(theText => {
                 units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType));
@@ -151,6 +152,8 @@ function createObject(unit){
                 });
                 }
             });
+            
+            }
             });
     }
     startUp();
