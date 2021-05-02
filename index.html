@@ -88,6 +88,7 @@
       </div>
     </div>
 
+
 <script type="text/javascript">
     var units = [];
 
@@ -145,19 +146,17 @@ function createObject(unit){
                 units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType));
                 count++;
                 if(count == modules.length){
-                (units).forEach((element2,x) =>{
-                 
-                    createObject(element2); 
-               
-            });
+                (units).forEach((element2,x) =>{  
+                    createObject(element2);
+                });
                 }
             });
-        });
-        
-        
+            });
     }
     startUp();
 
 </script>
+
+      
   </body>
 </html>
