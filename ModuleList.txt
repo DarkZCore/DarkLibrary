@@ -24,3 +24,5 @@ https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20
 https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/Neko-Sama/moduleTemplate.json
 https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/lightnovelsfull/moduleTemplate.json
 https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/wiflix.ws/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/KickAssAnime/module.json
+https://raw.githubusercontent.com/mprotmod/Modules-KETSU/main/Module%20Parser%20KETSU/MangaPill/moduleTemplate.json

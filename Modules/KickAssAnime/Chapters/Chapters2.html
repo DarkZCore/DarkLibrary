@@ -1,0 +1,106 @@
+<script type="text/javascript">
+
+function Chapters(request, extra, javascriptConfig, output) {
+    this.request = request;
+    this.extra = extra;
+    this.javascriptConfig = javascriptConfig;
+    this.output = output;
+}
+
+function ModuleRequest(url, method, headers, httpBody) {
+    this.url = url;
+    this.method = method;
+    this.headers = headers;
+    this.httpBody = httpBody;
+}
+
+function Extra(commands, extraInfo) {
+    this.commands = commands;
+    this.extraInfo = extraInfo;
+}
+
+function Commands(commandName, params) {
+    this.commandName = commandName;
+    this.params = params;
+}
+
+function JavascriptConfig(removeJavascript, loadInWebView, javaScript) {
+    this.removeJavascript = removeJavascript;
+    this.loadInWebView = loadInWebView;
+    this.javaScript = javaScript;
+}
+
+function KeyValue(key, value) {
+    this.key = key;
+    this.value = value;
+}
+
+function Output(videos, images, text) {
+    this.videos = videos;
+    this.images = images;
+    this.text = text;
+}
+
+function Videos(needsResolver, rawVideo) {
+    this.needsResolver = needsResolver;
+    this.rawVideo = rawVideo;
+}
+
+function NeedsResolver(resolverIdentifier, link) {
+    this.resolverIdentifier = resolverIdentifier;
+    this.link = link;
+}
+
+function RawVideo(video) {
+    this.video = video;
+}
+
+function Video(videoQuality, videoLink) {
+    this.videoQuality = videoQuality;
+    this.videoLink = videoLink;
+}
+
+function Text(text) {
+    this.text = text;
+}
+var savedData = document.getElementById('ketsu-final-data');
+var parsedJson = JSON.parse(savedData.innerHTML);
+var output = [];
+for (var x = 0; x < parsedJson.output.videos.needsResolver.length; x++) {
+    output.push(parsedJson.output.videos.needsResolver[x]);
+}
+
+function getHtmlStuff(array, match) {
+    for (var x = 0; x < array.length; x++) {
+        let data = array[x].innerText;
+        if (data.includes(match)) {
+            return array[x];
+        }
+    }
+}
+var emptyKeyValue = [new KeyValue('', '')];
+let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);
+if (document.querySelector('select') !== null) {
+    var servers = document.querySelectorAll('select > option');
+    for (var x = 0; x < servers.length; x++) {
+        let server = servers[x];
+        let link = server.getAttribute('value');
+        output.push(new NeedsResolver(server.innerText, new ModuleRequest(link, 'get', emptyKeyValue, null)));
+    }
+    var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(new Videos(output, null), null, null));
+    var finalJson = JSON.stringify(chaptersObject);
+    savedData.innerHTML = finalJson;
+} else {
+    var scripttt = getHtmlStuff(document.querySelectorAll('p'), 'sources').innerText.split('sources = ')[1].split(';')[0];
+    var scriptdata = JSON.parse(scripttt);
+    for (var x = 0; x < scriptdata.length; x++) {
+        let link = scriptdata[x].src;
+        let name = scriptdata[x].name;
+        output.push(new NeedsResolver(name, new ModuleRequest(link, 'get', emptyKeyValue, null)));
+    }
+    chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(new Videos(output, null), null, null));
+    finalJson = JSON.stringify(chaptersObject);
+    savedData.innerHTML = finalJson;
+}
+
+</script>
