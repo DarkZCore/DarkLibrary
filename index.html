@@ -94,7 +94,7 @@
 <script type="text/javascript">
     var units = [];
 
-function Unit(name,order,description,image,link,language,type){
+function Unit(name,order,description,image,link,language,type,dev){
     this.name = name;
     this.order = order;
     this.description = description;
@@ -102,6 +102,7 @@ function Unit(name,order,description,image,link,language,type){
     this.link = 'ketsuapp://?moduleData='+link;
     this.lan = language;
     this.type = type
+    this.dev = dev;
 }
 async function readTextFile(type){
     let array;
@@ -126,14 +127,14 @@ $(document).ready(function() {
 function createObject(unit){
     if (unit.type === "Video") {
 
-        $('#video-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+        $('#video-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><h6>Developer: ${unit.dev}</h6><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
 
 
     } else if (unit.type == "Image") {
-        $('#image-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+        $('#image-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><h6>Developer: ${unit.dev}</h6><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
 
     } else if (unit.type == "Text") {
-        $('#text-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+        $('#text-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><h6>Developer: ${unit.dev}</h6><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
 
     }
     
@@ -146,7 +147,7 @@ function createObject(unit){
             if(element != ''){
             console.log(element);
             await fetch(element).then(res => res.json()).then(theText => {
-                units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType));
+                units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType,theText.moduleInfo.developer));
                 count++;
                 if(count == modules.length){
                 (units).forEach((element2,x) =>{  
