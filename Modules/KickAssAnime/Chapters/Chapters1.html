@@ -92,10 +92,12 @@ if (scriptdata.ext_servers !== null) {
     for (var x = 0; x < scriptdata.ext_servers.length; x++) {
         let file = scriptdata.ext_servers[x];
         if (file !== null) {
-            let filelink = file.link;
-            let filename = file.name.toUpperCase();
-            filename = filename.replace(/ /g, '-');
+            var filelink = file.link;
             filelink = decodeURIComponent(filelink).split('&data=')[1].split('&vref')[0];
+            if (!filelink.includes('http')) {
+                filelink = 'https:' + filelink;
+            }
+            let filename = '';
             output.push(new NeedsResolver(filename, new ModuleRequest(filelink, 'get', emptyKeyValue, null)));
         }
     }
