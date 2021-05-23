@@ -6,14 +6,14 @@
         "developer": "Jack_",
         "moduleID": "cOd8rjCrzcZ",
         "moduleImage": "https://shiro.is/assets/img/favicon.png",
-        "moduleVersion": 1.4,
+        "moduleVersion": 1.6,
         "moduleLenguage": "ENG",
         "moduleType": "Video",
         "baseURL": "https://shiro.is/",
         "moduleDeveloperSite": "https://cyborg714.github.io/ketsu/",
         "UpdateSite": "https://raw.githubusercontent.com/Cyborg714/ketsu/main/shiro.json",
-        "preferedServer": "SUBSPLEASE",
-        "preferedDownloadServer": "SUBSPLEASE",
+        "preferedServer": "GOGOSHIRO",
+        "preferedDownloadServer": "GOGOSHIRO",
         "blackListed": [
             ""
         ]
@@ -389,7 +389,7 @@
             "javascriptConfig": {
                 "removeJavascript": true,
                 "loadInWebView": false,
-                "javaScript": "function Chapters(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output(videos, images, text) { this.videos = videos; this.images = images; this.text = text;}function Videos(needsResolver, rawVideo) { this.needsResolver = needsResolver; this.rawVideo = rawVideo;}function NeedsResolver(resolverIdentifier, link) { this.resolverIdentifier = resolverIdentifier; this.link = link;}function RawVideo(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}function Text(text) { this.text = text;}var output = [];var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('Referer', 'https://shiro.is/')];const script = document.querySelector('script').innerHTML.replace('/*', '').replace('*/', '');const data = JSON.parse(script);const info = data.data;const domain = 'https://cherry.subsplea.se/';let resolver = new NeedsResolver('Subsplease', new ModuleRequest(domain + info.videos[0].video_id, 'get', emptyKeyValue, null));output.push(resolver);let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(new Videos(output, null), null, null));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;"
+                "javaScript": "function Chapters(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output(videos, images, text) { this.videos = videos; this.images = images; this.text = text;}function Videos(needsResolver, rawVideo) { this.needsResolver = needsResolver; this.rawVideo = rawVideo;}function NeedsResolver(resolverIdentifier, link) { this.resolverIdentifier = resolverIdentifier; this.link = link;}function RawVideo(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}function Text(text) { this.text = text;}var output = [];var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('Referer', 'https://shiro.is/')];const script = document.querySelector('script').innerHTML.replace('/*', '').replace('*/', '');const data = JSON.parse(script);const info = data.data;const domain = 'https://cherry.subsplea.se/';let subsplease = new NeedsResolver('Subsplease', new ModuleRequest(domain + info.videos[0].video_id, 'get', emptyKeyValue, null));let gogo = new NeedsResolver('GOGOSHIRO', new ModuleRequest(`https://gogo-stream.com/ajax.php?id=${info.videos[0].video_id}&refer=https://shiro.is/`, 'get', emptyKeyValue, null));output.push(subsplease);output.push(gogo);let emptyExtra = new Extra([new Commands('', emptyKeyValue)], emptyKeyValue);var chaptersObject = new Chapters(new ModuleRequest('', '', emptyKeyValue, null), emptyExtra, new JavascriptConfig(false, false, ''), new Output(new Videos(output, null), null, null));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;"
             },
             "output": {
                 "videos": {
@@ -497,6 +497,76 @@
                         "removeJavascript": false,
                         "loadInWebView": false,
                         "javaScript": "function Resolver(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}function getNext(match, array) { for (var x = 0; x < array.length; x++) { let mMatch = array[x]; if (mMatch.includes(match)) { return array[x + 1]; } }}var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)];var videos = [];var vid = document.querySelector('#player > source').src;videos.push(new Video('Normal', new ModuleRequest(vid, 'get', emptyKeyValue, null)));var chaptersObject = new Resolver(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(videos));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;"
+                    },
+                    "output": {
+                        "moduleID": "",
+                        "video": [
+                            {
+                                "videoQuality": "720",
+                                "videoLink": {
+                                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                                    "method": "get",
+                                    "headers": [
+                                        {
+                                            "key": "key",
+                                            "value": "value"
+                                        }
+                                    ],
+                                    "httpBody": null
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "resolverInfo": {
+                "resolverName": "GOGOSHIRO",
+                "nameMatches": [
+                    "GOGOSHIRO"
+                ],
+                "developer": "Jack_",
+                "moduleID": "VVXZW5ItucF",
+                "resolverVersion": 1,
+                "baseURL": ""
+            },
+            "resolver": [
+                {
+                    "request": {
+                        "url": "",
+                        "method": "get",
+                        "headers": [
+                            {
+                                "key": "key",
+                                "value": "value"
+                            }
+                        ],
+                        "httpBody": null
+                    },
+                    "extra": {
+                        "commands": [
+                            {
+                                "commandName": "",
+                                "params": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "extraInfo": [
+                            {
+                                "key": "",
+                                "value": ""
+                            }
+                        ]
+                    },
+                    "javascriptConfig": {
+                        "removeJavascript": false,
+                        "loadInWebView": false,
+                        "javaScript": "function Resolver(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output;}function ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody;}function Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo;}function Commands(commandName, params) { this.commandName = commandName; this.params = params;}function JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript;}function KeyValue(key, value) { this.key = key; this.value = value;}function Output(video) { this.video = video;}function Video(videoQuality, videoLink) { this.videoQuality = videoQuality; this.videoLink = videoLink;}var savedData = document.getElementById('ketsu-final-data');var parsedJson = JSON.parse(savedData.innerHTML);var emptyKeyValue = [new KeyValue('Referer', parsedJson.request.url)];var videos = [];const script = document.querySelector('script').innerHTML.replace('/*', '').replace('*/', '');const data = JSON.parse(script);if (data.source.length != 0) { videos.push(new Video(data.source[0].label, new ModuleRequest(data.source[0].file, 'get', emptyKeyValue, null)));} else if (data.source_bk.length != 0) { videos.push(new Video(data.source_bk[0].label, new ModuleRequest(data.source_bk[0].file, 'get', emptyKeyValue, null)));}var chaptersObject = new Resolver(new ModuleRequest('', '', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), new Output(videos));var finalJson = JSON.stringify(chaptersObject);savedData.innerHTML = finalJson;"
                     },
                     "output": {
                         "moduleID": "",
