@@ -21,7 +21,6 @@ https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Shiro/mod
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Toonily/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Webtoon/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/9Anime/module.json
-https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/Neko-Sama/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/lightnovelsfull/moduleTemplate.json
 https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/wiflix.ws/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/KickAssAnime/module.json
