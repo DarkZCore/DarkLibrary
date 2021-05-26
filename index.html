@@ -94,16 +94,17 @@
 <script type="text/javascript">
     var units = [];
 
-function Unit(name,order,description,image,link,language,type,dev,version){
+function Unit(name,order,description,image,link,language,type,dev,version,updatesite){
     this.name = name;
     this.order = order;
     this.description = description;
     this.image = image;
     this.link = 'ketsuapp://?moduleData='+link;
     this.lan = language;
-    this.type = type
+    this.type = type;
     this.dev = dev;
-    this.version = version
+    this.version = version;
+    this.updatesite = updatesite;
 }
 async function readTextFile(type){
     let array;
@@ -148,7 +149,7 @@ function createObject(unit){
             if(element != ''){
             console.log(element);
             await fetch(element).then(res => res.json()).then(theText => {
-                units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType,theText.moduleInfo.developer,theText.moduleInfo.moduleVersion));
+                units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType,theText.moduleInfo.developer,theText.moduleInfo.moduleVersion,theText.moduleInfo.UpdateSite));
                 count++;
                 if(count == modules.length){
                 (units).forEach((element2,x) =>{  
@@ -161,6 +162,25 @@ function createObject(unit){
             });
     }
     startUp();
+
+
+    function checkVersion() {
+     
+      units.forEach((item,x)=>{
+        
+        fetch(item.updatesite).then(res=> res.json()).then(theText=>{
+          let updatesiteversion = theText.moduleInfo.moduleVersion;
+          let moduleversion = units.version;
+          if (updatesiteversion > moduleversion) {
+            console.log(item.name+'('+item.language+')'+'needs to be updated from '+moduleversion+' to '+updatesiteversion)
+          } else {
+            console.log(item.name+'('+item.lan+')'+' doesnt need an upadte.');
+          }
+        })
+
+      })
+    }
+    setTimeout(checkVersion,500);
 
 </script>
 
