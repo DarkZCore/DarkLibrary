@@ -118,14 +118,26 @@ async function readTextFile(type){
 $(document).ready(function() {
     $("#search-input").on("keyup", function() {
       var value = $(this).val().toLowerCase();
-      console.log(value)
+      console.log(value);
       $(".module-container").filter(function() {
-          console.log($(this).text())
-
-        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          $(this).toggle($(this).find('h3').text().toLowerCase().indexOf(value) > -1)
       });
     });
+   
+
   });
+  function searchModule() {
+    
+    if (window.location.search !== '') {
+      let value = window.location.search.split('?search=')[1].replace(/%20/g,' ').toLowerCase();
+      console.log(value);
+     
+      $(".module-container").filter(function() {
+        console.log($(this).find('h3').text())
+          $(this).toggle($(this).find('h3').text().toLowerCase().indexOf(value) > -1)
+      });
+    }
+  }
 function createObject(unit){
     if (unit.type === "Video") {
 
@@ -180,7 +192,8 @@ function createObject(unit){
 
       })
     }
-    setTimeout(checkVersion,500);
+    setTimeout(checkVersion,400);
+    setTimeout(searchModule,100)
 
 </script>
 
