@@ -170,11 +170,11 @@ function createObject(unit){
         
         fetch(item.updatesite).then(res=> res.json()).then(theText=>{
           let updatesiteversion = theText.moduleInfo.moduleVersion;
-          let moduleversion = units.version;
+          let moduleversion = item.version;
+         
           if (updatesiteversion > moduleversion) {
+            
             console.log(item.name+'('+item.language+')'+'needs to be updated from '+moduleversion+' to '+updatesiteversion)
-          } else {
-            console.log(item.name+'('+item.lan+')'+' doesnt need an upadte.');
           }
         })
 
