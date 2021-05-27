@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Dark,Noah">
+        <title>Module Json</title>
+        <link rel="icon" href="https://cdn4.iconfinder.com/data/icons/school-education-14/512/Icon_18-512.png">
+        <meta property="og:image" content="https://cdn4.iconfinder.com/data/icons/school-education-14/512/Icon_18-512.png">
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+      </head>
+<body>
+    
+
+
+
+    <script type="text/javascript">
+    var units = [];
+
+
+function Unit(name,order,description,image,link,language,type,dev,version,updatesite){
+    this.name = name;
+    this.order = order;
+    this.description = description;
+    this.image = image;
+    this.link = 'ketsuapp://?moduleData='+link;
+    this.lan = language;
+    this.type = type;
+    this.dev = dev;
+    this.version = version;
+    this.updatesite = updatesite;
+}
+function createObject(unit){
+    if (unit.type === "Video") {
+
+        $('#video-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><h6>Developer: ${unit.dev} | Ver: ${unit.version}</h6><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+
+
+    } else if (unit.type == "Image") {
+        $('#image-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><h6>Developer: ${unit.dev} | Ver: ${unit.version}</h6><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+
+    } else if (unit.type == "Text") {
+        $('#text-modules').append(`<div style="display: flex;" class="module-container col-lg-4 col-md-6 align-items-start"><div class="icon-square bg-light text-dark flex-shrink-0 me-3"><img width="75" height="75" src="${unit.image}" style="object-fit: cover;" alt=""> </div><div><h3>${unit.name} (${unit.lan})</h3><h6>Developer: ${unit.dev} | Ver: ${unit.version}</h6><p>${unit.description}</p><a href="${unit.link}" class="btn btn-primary">Add Module</a> </div> </div>`)
+
+    }
+    
+}
+    function startUp(){
+        fetch('https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/ModuleList.txt').then(res => res.text()).then(text => {
+       
+            let modules = text.split('\n');
+            console.log(modules);
+        var count = 0;
+        modules.forEach(async (element,index) =>{
+            if(element != ''){
+            console.log(element);
+            fetch(element).then(res => res.json()).then(theText => {
+                units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType,theText.moduleInfo.developer,theText.moduleInfo.moduleVersion,theText.moduleInfo.UpdateSite));
+                count++;
+                if(count == modules.length){
+                   let div = document.createElement('div');
+                   div.id = 'modules-json';
+                   let text = document.createTextNode(JSON.stringify(units))
+                   div.appendChild(text);
+                document.body.append(div)
+                }
+            });
+            
+            }
+            });
+        
+        });
+    
+       
+     
+    }
+    startUp();
+
+    </script>
+</body>
+</html>
