@@ -165,7 +165,10 @@ function createObject(unit){
                 units.push(new Unit(theText.moduleInfo.moduleName,index,theText.moduleInfo.moduleDesc,theText.moduleInfo.moduleImage,element,theText.moduleInfo.moduleLenguage,theText.moduleInfo.moduleType,theText.moduleInfo.developer,theText.moduleInfo.moduleVersion,theText.moduleInfo.UpdateSite));
                 count++;
                 if(count == modules.length){
-                (units).forEach((element2,x) =>{  
+                  (units).sort((a,b)=>{
+                    return a.order-b.order
+                  })
+                units.forEach((element2,x) =>{  
                     createObject(element2);
                 });
                 }
@@ -187,7 +190,7 @@ function createObject(unit){
          
           if (updatesiteversion > moduleversion) {
             
-            console.log(item.name+'('+item.language+')'+'needs to be updated from '+moduleversion+' to '+updatesiteversion)
+            console.log(item.name+'('+item.lan+')'+'needs to be updated from '+moduleversion+' to '+updatesiteversion+'. Go to '+theText.moduleInfo.UpdateSite)
           }
         })
 
