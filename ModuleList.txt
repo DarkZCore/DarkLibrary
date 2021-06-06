@@ -26,4 +26,4 @@ https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/wiflix.ws/modul
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/KickAssAnime/module.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/MangaPill/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Drama%20Cool/moduleTemplate.json
-https://raw.githubusercontent.com/Cyborg714/ketsu/main/readcomiconline.json
+https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/readcomiconline.json
