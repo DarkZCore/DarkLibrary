@@ -207,9 +207,9 @@ function Type(input) {
 }
 for (var x = 0; x < data.length; x++) {
     let title = data[x].name;
-    let image = 'https://www2.kickassanime.rs/uploads/' + data[x].image;
+    let image = 'https://www2.kickassanime.ro/uploads/' + data[x].image;
     image = encodeURI(image);
-    let link = 'https://www2.kickassanime.rs' + data[x].slug;
+    let link = 'https://www2.kickassanime.ro' + data[x].slug;
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
     dataArray.push(new Data(image, title, Type(title), '', '', '', '', false, link));

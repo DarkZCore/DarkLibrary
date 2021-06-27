@@ -220,9 +220,9 @@ for (let x = 0; x < scriptdata.animeList.all.length; x++) {
     let anime = scriptdata.animeList.all[x];
     let title = anime.name;
     let episode = 'Episode ' + anime.episode;
-    let image = 'https://www2.kickassanime.rs/uploads/' + anime.poster;
+    let image = 'https://www2.kickassanime.ro/uploads/' + anime.poster;
     image = encodeURI(image);
-    let link = 'https://www2.kickassanime.rs' + anime.slug;
+    let link = 'https://www2.kickassanime.ro' + anime.slug;
     link = link.split('/episode')[0];
     image = new ModuleRequest(image, 'get', emptyKeyValue, null);
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
@@ -247,9 +247,9 @@ for (var x = 0; x < scriptdata.scheduleList.length; x++) {
     for (var i = 0; i < schedule.data.length; i++) {
         let anime = schedule.data[i];
         let title = anime.title;
-        let link = 'https://www2.kickassanime.rs' + anime.slug;
+        let link = 'https://www2.kickassanime.ro' + anime.slug;
         let time = anime.time;
-        let image = 'https://www2.kickassanime.rs/uploads/' + anime.image;
+        let image = 'https://www2.kickassanime.ro/uploads/' + anime.image;
         link = link.split('/episode')[0];
         image = encodeURI(image);
         image = new ModuleRequest(image, 'get', emptyKeyValue, null);
@@ -258,7 +258,7 @@ for (var x = 0; x < scriptdata.scheduleList.length; x++) {
     }
     output.push(new Output(CellDesings.wide9, Orientation.vertical, DefaultLayouts.wideStrechedFullList, Paging.none, new Section(schedule.day, true), null, days[x]));
 }
-let MainPageObject = new MainPage(new ModuleRequest('https://www2.kickassanime.rs/new-season', 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), output);
+let MainPageObject = new MainPage(new ModuleRequest('https://www2.kickassanime.ro/new-season', 'get', emptyKeyValue, null), new Extra([new Commands('', emptyKeyValue)], emptyKeyValue), new JavascriptConfig(false, false, ''), output);
 var finalJson = JSON.stringify(MainPageObject);
 savedData.innerHTML = finalJson;
 

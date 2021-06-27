@@ -88,14 +88,14 @@ if (info.genres !== undefined) {
 var desc = decodeURIComponent(info.description);
 desc = desc.replace(/&quot;/g, '\'');
 var title = info.name;
-var image = 'https: //www2.kickassanime.rs/uploads/' + info.image;
+var image = 'https: //www2.kickassanime.ro/uploads/' + info.image;
 image = encodeURI(image);
 image = new ModuleRequest(image, 'get', emptyKeyValue, null);
 var genresArray = [];
 for (var x = 0; x < info.episodes.length; x++) {
     let episode = info.episodes[x];
     let episode_num = episode.epnum;
-    let link = 'https://www2.kickassanime.rs' + episode.slug;
+    let link = 'https://www2.kickassanime.ro' + episode.slug;
     link = new ModuleRequest(link, 'get', emptyKeyValue, null);
     episodes.push(new Chapter(episode_num, link, false));
 }
