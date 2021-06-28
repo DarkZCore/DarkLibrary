@@ -15,11 +15,7 @@ https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/TAADD/mod
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Trace.moe/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/VostFree/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/WCOS/moduleTemplate.json
-https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Hanime/moduleTemplate.json
-https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/NHentai/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Shiro/moduleTemplate.json
-https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Toonily/moduleTemplate.json
-https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Webtoon/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/9Anime/module.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/lightnovelsfull/moduleTemplate.json
 https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/wiflix.ws/moduleTemplate.json
