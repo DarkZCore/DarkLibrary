@@ -96,7 +96,8 @@
 	taadd : "423948723487",
 	engninemanga : "875749847855764655",
 	spninemanga : "8757498472737",
-	rln : "223423423421"
+	rln : "223423423421",
+    webtoonxyz: "4z9Kz9CBl1R"
 };
 
 
@@ -158,12 +159,12 @@ console.log(inputKetsu.favorites.length);
 	var type;
 	if(!katsu){
 	(inputKatsu).forEach(element => {
-	if(element.link.includes("taadd")||element.link.includes("manganelo")||element.link.includes("ninemanga")||element.link.includes("gogoanime")||element.link.includes("readlightnovel")||element.link.includes("animekisa")||element.link.includes("animehub")||element.link.includes("4anime")||element.link.includes("jkanime")){
+	if(element.link.includes("taadd")||element.link.includes("manganelo")||element.link.includes("ninemanga")||element.link.includes("gogoanime")||element.link.includes("readlightnovel")||element.link.includes("animekisa")||element.link.includes("animehub")||element.link.includes("4anime")||element.link.includes("jkanime")||element.link.includes("webtoon")){
 	
 	
 	
 	
-		if(element.link.includes("taadd") || element.link.includes("manganelo") || element.link.includes("ninemanga")){
+		if(element.link.includes("taadd") || element.link.includes("manganelo") || element.link.includes("ninemanga") || element.link.includes("webtoon")){
 	type = "Image";
 }else if(element.link.includes("readlightnovel")){type = "Text"}else{type="Video"}
 
@@ -189,6 +190,8 @@ var moduleId;
 			moduleId = moduleIds.spninemanga;
 		}else if(element.link.includes("readlightnovel")){
 			moduleId = moduleIds.rln;
+		}else if(element.link.includes("webtoon.xyz")){
+			moduleId = moduleIds.rln;
 		}
 		
 		
@@ -199,12 +202,12 @@ var moduleId;
 	}
 		if(!zetsu){
 	(inputZetsu).forEach(element => {
-	if(element.link.includes("taadd")||element.link.includes("manganelo")||element.link.includes("ninemanga")||element.link.includes("gogoanime")||element.link.includes("readlightnovel")||element.link.includes("animekisa")||element.link.includes("animehub")||element.link.includes("4anime")||element.link.includes("jkanime")){
+	if(element.link.includes("taadd")||element.link.includes("manganelo")||element.link.includes("ninemanga")||element.link.includes("gogoanime")||element.link.includes("readlightnovel")||element.link.includes("animekisa")||element.link.includes("animehub")||element.link.includes("4anime")||element.link.includes("jkanime") || element.link.includes("webtoon")){
 	
 	
 	
 	
-		if(element.link.includes("taadd") || element.link.includes("manganelo") || element.link.includes("ninemanga")){
+		if(element.link.includes("taadd") || element.link.includes("manganelo") || element.link.includes("ninemanga") || element.link.includes("webtoon")){
 	type = "Image";
 }else if(element.link.includes("readlightnovel")){type = "Text"}else{type="Video"}
 
@@ -229,6 +232,8 @@ var moduleId;
 		}else if(element.link.includes("es.ninemanga")){
 			moduleId = moduleIds.spninemanga;
 		}else if(element.link.includes("readlightnovel")){
+			moduleId = moduleIds.rln;
+		}else if(element.link.includes("webtoon.xyz")){
 			moduleId = moduleIds.rln;
 		}
 		
