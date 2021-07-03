@@ -25,9 +25,9 @@ https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Drama%20C
 https://raw.githubusercontent.com/Cyborg714/ketsu/main/image/readcomiconline.json
 https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/Livre1/Livre1.json
 https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/NineManga/NineMangaFR.json
-https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Pornhub/pornhub.json
 https://raw.githubusercontent.com/Bilna95/bilna95.github.io/main/ScansMangas/ScansMangasKETSU.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Toonily/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Webtoon/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Hanime/moduleTemplate.json
 https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/NHentai/moduleTemplate.json
+https://raw.githubusercontent.com/DarkZCore/DarkLibrary/master/Modules/Pornhub/pornhub.json
